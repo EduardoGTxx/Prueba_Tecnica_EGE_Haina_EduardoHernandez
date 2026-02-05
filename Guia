@@ -1,0 +1,15 @@
+-- En windows powershell ejecuta una a una los siguentes comandos:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+.\.venv\Scripts\Activate.ps1
+
+pip install pandas requests sqlalchemy pymysql python-dotenv
+
+cd $env:USERPROFILE\Desktop\plan_aiven_edesur
+
+python -m src.main
+
+python -m src.rnc_carga
+
+-- Listo

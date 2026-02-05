@@ -1,0 +1,44 @@
+-----------------------------------------------------------------------------------------------------------------------------
+Parte 1 – Proceso ETL (Python + db)
+-----------------------------------------------------------------------------------------------------------------------------
+
+- Objetivo:
+El objetivo es extraer, transformar y cargar (ETL) el dataset de Cobros de EDESUR desde el archivo CSV hacia una db MySQL alojada en Aiven.
+
+- Tecnologías utilizadas:
+    Python 3
+    Pandas para manipulación y limpieza de datos
+    SQLAlchemy + PyMySQL para conexión a MySQL
+    MySQL (Aiven Cloud) como db destino
+    dotenv para manejo seguro de credenciales
+
+- Resultado
+    La información quedó almacenada de forma estructurada en la db edesur_db.
+    La tabla resultante es consistente, normalizada y lista para consultas SQL y creación de vistas.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Parte 2 – SQL y Modelado
+-----------------------------------------------------------------------------------------------------------------------------
+
+- Objetivo:
+El objetivo de esta parte es crear vistas en MySQL basadas en la tabla ya cargada fact_edesur_cobros, con el fin de segmentar y consultar la información por provincia/sector/zona, facilitando análisis sin necesidad de reescribir filtros manuales en cada consulta.
+
+-Resultado
+Se logró una capa de consultas reusable a través de vistas, permitiendo:
+    Segmentación inmediata por provincia/zona.
+    Mayor facilidad para análisis.
+    Estandarización del acceso a los datos desde SQL o herramientas BI.
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+Parte 3 – Integración de fuente externa
+-----------------------------------------------------------------------------------------------------------------------------
+
+-Objetivo
+El objetivo de esta parte es integrar el listado oficial de contribuyentes de la DGII a la db MySQL, con el fin de tener la información fiscal estructurada que permita segmentaciones y análisis.
+
+-Resultado
+La información de contribuyentes DGII quedó integrada de forma estructurada en la db, lista para:
+    Análisis fiscales.
+    Segmentación por régimen y estado.
+    Posible integración futura con otras tablas del proyecto.
